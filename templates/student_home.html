@@ -1,0 +1,9 @@
+{% extends 'common_student.html' %}
+{% block pwn %}
+    <table>
+    {% for x in data %}
+       <tr>{{ x.name }}
+       </tr>
+        </table>
+    {% endfor %}
+{% endblock %}

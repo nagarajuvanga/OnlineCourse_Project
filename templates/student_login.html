@@ -1,0 +1,32 @@
+{% extends 'common_student.html' %}
+{% block pwn %}
+    {% load static %}
+    <style>
+        .schedule
+        {
+            font-family: "Arial Black";
+            font-size: 20px;
+            padding: 10px;
+            color: yellowgreen;
+        }
+    .input_fields
+    {
+        text-align: center;
+
+    }
+    </style>
+    <form action="{% url 'save_studentdata' %}" method="post">
+    {% csrf_token %}
+    <table align="center" border="0">
+        <tr>
+            <th rowspan="6"><img src="{% static 'images/students.png' %}"></th>
+            <th class="schedule">Student Registration</th>
+        </tr>
+        <tr><th class="input_fields"><input type="text" placeholder="Name" required name="p1"></th></tr>
+        <tr><th class="input_fields"><input type="number" placeholder="ContactNo" required name="p2"></th></tr>
+        <tr><th class="input_fields"><input type="email" placeholder="Email" required name="p3"></th></tr>
+        <tr><th class="input_fields"><input type="password" placeholder="password" required name="p4"></th></tr>
+        <tr><th class="input_fields"><button type="submit">Register</button></th></tr>
+    </table>
+    </form>
+{% endblock %}
