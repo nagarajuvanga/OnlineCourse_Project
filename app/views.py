@@ -96,9 +96,14 @@ def login_s(request):
         return render(request, "student_welcome.html",{"error_message": "Invalid User"})
 
 def welcome_student(request):
-    return render(request,"welcome_student.html")
+    res=Schedule_class.objects.all()
+    return render(request,"welcome_student.html",{"data":res})
 
 
 def student_home(request):
     res = Schedule_class.objects.all()
     return render(request,"student_home.html",{"data":res})
+
+
+def entrol(request):
+    return render(request,"welcome_student.html")

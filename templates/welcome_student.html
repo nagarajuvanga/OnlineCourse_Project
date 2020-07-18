@@ -1,4 +1,44 @@
 {% extends 'common_entrol.html' %}
 {% block raju %}
-    welcome
-{% endblock %}
+    <style>
+        #view
+        {
+            font-size: 15px;
+            font-family: "Arial Black";
+            color: brown;
+            padding: 5px;
+            text-align: center;
+        }
+    .tabl
+    {
+        background-color: yellow;
+    }
+    .result
+    {
+        background-color: green;
+    }
+    </style>
+    <table align="center" border="2">
+        <tr><th colspan="8" id="view">Courses</th></tr>
+        <tr>
+            <th class="tabl">Name</th>
+            <th class="tabl">Faculty</th>
+            <th class="tabl">Date</th>
+            <th class="tabl">Time</th>
+            <th class="tabl">Fee</th>
+            <th class="tabl">Duration</th>
+            <th class="tabl">Entrol</th>
+        </tr>
+    {% for x in data %}
+                <tr>
+                    <th class="result">{{ x.name }}</th>
+                    <th class="result">{{ x.faculty }}</th>
+                    <th class="result">{{ x.date }}</th>
+                    <th class="result">{{ x.time }}</th>
+                    <th class="result">{{ x.fee }}</th>
+                    <th class="result">{{ x.duration }}</th>
+                    <th class="result"><a href="{% url 'entrol' %}">YES</a></th>
+                </tr>
+    {% endfor %}
+        {% endblock %}
+</table>

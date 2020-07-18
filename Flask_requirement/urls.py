@@ -35,5 +35,6 @@ urlpatterns = [
     path('student_home/',views.student_home,name="student_home"),
     path("login/",views.login,name="login"),
     path('login_s/',views.login_s,name="login_s"),
-    path('welcome_student/',views.welcome_student,name="welcome_student")
+    path('welcome_student/',views.welcome_student,name="welcome_student"),
+    path('entrol/',views.entrol,name="entrol")
 ]

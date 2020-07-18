@@ -1,9 +1,25 @@
 {% extends 'common_student.html' %}
 {% block pwn %}
+    {% load static %}
+    <style>
+        .available
+        {
+            padding: 8px;
+        }
+    </style>
     <table>
+    <tr><th style="color: green;font-size: 30px;">Available Courses
+    <img src="{% static 'images/new.png' %}" width="50"></th></tr>
+    </table>
+    <tr><th><img src="{% static 'images/students.png' %}"></th></tr>
     {% for x in data %}
-       <tr>{{ x.name }}
-       </tr>
+        <table align="center" border="2" style="float: left;padding: 5px;margin: 20px;display: inline-block">
+        <tr><th class="available">Course:{{ x.name }}</th></tr>
+        <tr><th class="available">Faculty:{{ x.faculty }}</th></tr>
+        <tr><th class="available">Date:{{ x.date }}</th></tr>
+        <tr><th class="available">Time:{{ x.time }}</th></tr>
+        <tr><th class="available">Fee:{{ x.fee }}</th></tr>
+        <tr><th class="available">Duration:{{ x.duration }}</th></tr>
         </table>
     {% endfor %}
 {% endblock %}
